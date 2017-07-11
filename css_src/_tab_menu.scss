@@ -1,0 +1,55 @@
+h1{
+  font-size:20px;
+  border-bottom:1px solid olive;
+  margin:0 auto 50px;
+  width:960px;
+  padding-bottom:10px;
+  font-weight:bold;
+}
+
+.tab{
+
+  &-wrap{
+    width:960px;
+    margin:0 auto;
+    position:relative;
+    padding-top:100px;
+  }
+
+  &-heading{
+    width:33.33%;
+    position:absolute;
+    top:0;
+    left:0;
+
+    &.css{
+      left:33.33%;
+    }
+
+    &.js{
+      left:66.66%;
+    }
+    >a{
+      display:block;
+      padding:20px;
+      text-align:center;
+      border:1px solid lightgray;
+      box-sizing: border-box;
+
+      &.on{
+        color:#fff;
+        background:olive;
+        border-color:cornflowerblue;
+
+      }
+
+    }
+
+  }
+
+
+
+
+
+
+}

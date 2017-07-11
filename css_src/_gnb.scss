@@ -1,0 +1,54 @@
+.header{
+  border-bottom: 1px solid gainsboro;
+  margin-bottom:100px;
+}
+
+
+.gnb{
+
+  padding:20px 0;
+  background: #efefef;
+
+  &-depth1{
+    width:600px;
+    margin:0 auto;
+
+
+    &:after{
+      content:'';
+      display:block;
+      clear:both;
+    }
+
+    &-item{
+      float:left;
+      width:25%;
+      text-align:center;
+    }
+
+    &-link:hover{
+      text-decoration: underline;
+      color:coral;
+    }
+
+  }
+
+
+
+
+  &-depth2 {
+    margin-top: 25px;
+
+    &-item {
+      margin-top: 10px;
+
+    }
+
+    &-link:hover {
+      text-decoration: underline;
+      color:coral;
+    }
+  }
+
+
+}
