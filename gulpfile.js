@@ -39,7 +39,7 @@ gulp.task('watch', function(){
   gulp.watch('*', ['livereload']);
   gulp.watch('html_src/**', ['include', 'livereload']);
   gulp.watch('css_src/**', ['sass', 'livereload']);
-  gulp.watch('js_src/**', ['tabmenu', 'livereload']);
+  gulp.watch('js_src/**', ['jsconcat', 'livereload']);
 });
 
 
@@ -61,6 +61,7 @@ gulp.task('sass', function(){
 });
 
 // concat 실행 - 여러개의 파일을 하나의 파일로 합치는 기능
+
 gulp.task('tabmenu', function() {
   return gulp.src('js_src/tab_menu/*.js')
       .pipe(sourcemaps.init())
@@ -69,4 +70,13 @@ gulp.task('tabmenu', function() {
       .pipe(gulp.dest('js/'));
 });
 
-gulp.task('default', ['livereload','include','sass','tabmenu', 'watch']);
+gulp.task('gnbmenu', function() {
+  return gulp.src('js_src/gnb_menu/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('gnb_menu.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('js/'));
+});
+
+gulp.task('jsconcat', ['tabmenu','gnbmenu']);
+gulp.task('default', ['livereload','include','sass','jsconcat', 'watch']);

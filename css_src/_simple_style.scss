@@ -1,0 +1,7 @@
+/* 단편 스타일 */
+
+%clearFix:after{
+  content:"";
+  display:block;
+  clear:both;
+}

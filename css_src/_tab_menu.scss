@@ -1,3 +1,9 @@
+// Sass 주석 중 // 주석운 css로 변환 시 출력되지 않음
+
+/* Tab Menu Styling */
+
+
+// 공통 제목 스타일링
 h1{
   font-size:20px;
   border-bottom:1px solid olive;
@@ -7,7 +13,57 @@ h1{
   font-weight:bold;
 }
 
+// js 애니메이션용 style
 .tab{
+
+  &-wrap{
+    width:960px;
+    margin:0 auto;
+    position:relative;
+    padding-top:100px;
+  }
+
+  &-heading{
+    width:33.33%;
+    position:absolute;
+    top:0;
+    left:0;
+
+    &.css{
+      left:33.33%;
+    }
+
+    &.js{
+      left:66.66%;
+    }
+    >a{
+      display:block;
+      padding:20px;
+      text-align:center;
+      border:1px solid lightgray;
+      box-sizing: border-box;
+      background:#fff;
+      // 애니메이션 구현 속성
+      transition:all 0.5s ease-out;
+
+      &.on{
+        color:#fff;
+        background:olive;
+        border-color:cornflowerblue;
+
+      }
+
+    }
+
+  }
+
+
+
+
+}
+
+// css 애니메이션용 style
+.css-tab{
 
   &-wrap{
     width:960px;
@@ -47,9 +103,22 @@ h1{
 
   }
 
+  &-content{
+    // display 속성은 애니메이션 적용 안됨
+    visibility:hidden;
+    opacity:0;
+    //애니메이션 구현 css
+    transition:all .5s ease-out;
 
+    position: absolute;
+    top:100px;
+    left: 0;
 
-
+    &.on{
+      visibility:visible;
+      opacity:1;
+    }
+  }
 
 
 }
