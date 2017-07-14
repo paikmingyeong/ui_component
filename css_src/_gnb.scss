@@ -1,21 +1,19 @@
 .header{
-  border-bottom: 1px solid gainsboro;
+  border-bottom:1px solid red;
   margin-bottom:100px;
 }
-
 
 .gnb{
 
   padding:20px 0;
-  background: #efefef;
+  background:#f5f5f5;
 
   &-depth1{
     width:600px;
     margin:0 auto;
 
-
     &:after{
-      content:'';
+      content:"";
       display:block;
       clear:both;
     }
@@ -27,28 +25,47 @@
     }
 
     &-link:hover{
-      text-decoration: underline;
-      color:coral;
-    }
-
-  }
-
-
-
-
-  &-depth2 {
-    margin-top: 25px;
-
-    &-item {
-      margin-top: 10px;
-
-    }
-
-    &-link:hover {
-      text-decoration: underline;
-      color:coral;
+      text-decoration:underline;
     }
   }
 
+  &-depth2{
+    margin-top:20px;
 
+    &-item{
+      margin-top:10px;
+    }
+
+    &-link:hover{
+      text-decoration:underline;
+    }
+  }
+
+}
+
+.util{
+
+  padding:10px 0;
+  background:#333;
+  border-bottom:1px solid red;
+
+  &-menu{
+    width:600px;
+    margin:0 auto;
+    text-align:right;
+  }
+
+  &-link{
+    color:#fff;
+  }
+}
+
+// 공통 제목 스타일링
+h1{
+  font-size:30px;
+  border-bottom:1px solid #009926;
+  margin: 0 auto 50px;
+  width:960px;
+  padding-bottom:10px;
+  font-weight:bold;
 }

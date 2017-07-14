@@ -1,17 +1,6 @@
-// Sass 주석 중 // 주석운 css로 변환 시 출력되지 않음
+// Sass 주석 중 // 주석은 css로 변환시 출력되지 않음
 
 /* Tab Menu Styling */
-
-
-// 공통 제목 스타일링
-h1{
-  font-size:20px;
-  border-bottom:1px solid olive;
-  margin:0 auto 50px;
-  width:960px;
-  padding-bottom:10px;
-  font-weight:bold;
-}
 
 // js 애니메이션용 style
 .tab{
@@ -36,29 +25,22 @@ h1{
     &.js{
       left:66.66%;
     }
+
     >a{
       display:block;
       padding:20px;
       text-align:center;
-      border:1px solid lightgray;
-      box-sizing: border-box;
+      border:1px solid mediumvioletred;
+      box-sizing:border-box;
       background:#fff;
-      // 애니메이션 구현 속성
-      transition:all 0.5s ease-out;
 
       &.on{
         color:#fff;
-        background:olive;
-        border-color:cornflowerblue;
-
+        background:mediumvioletred;
+        border-color:greenyellow;
       }
-
     }
-
   }
-
-
-
 
 }
 
@@ -85,40 +67,41 @@ h1{
     &.js{
       left:66.66%;
     }
+
     >a{
       display:block;
       padding:20px;
       text-align:center;
-      border:1px solid lightgray;
-      box-sizing: border-box;
+      border:1px solid mediumvioletred;
+      box-sizing:border-box;
+      background:#fff;
+      // 애니메이션 구현 속성
+      transition:all 0.5s ease-out;
 
       &.on{
         color:#fff;
-        background:olive;
-        border-color:cornflowerblue;
-
+        background:mediumvioletred;
+        border-color:greenyellow;
       }
-
     }
-
   }
 
   &-content{
+    width:100%;
     // display 속성은 애니메이션 적용 안됨
-    visibility:hidden;
+    visibility: hidden;
     opacity:0;
-    //애니메이션 구현 css
+    // 애니메이션 구현 CSS
     transition:all .5s ease-out;
 
-    position: absolute;
+    position:absolute;
     top:100px;
-    left: 0;
+    left:0;
 
     &.on{
-      visibility:visible;
+      visibility: visible;
       opacity:1;
     }
   }
-
 
 }

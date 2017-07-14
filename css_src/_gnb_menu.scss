@@ -1,27 +1,24 @@
 /* Gnb Menu Style */
 
 // 기본 style
-
 .menu{
 
   &-wrap{
     /*
-    border-top:50px solid #333;
-    border-bottom:50px solid #bbb;
+      border-top:50px solid #333;
+      border-bottom:50px solid #bbb;
     */
     border:{
       top:50px solid #333;
       //bottom:50px solid #bbb;
     }
-
-    // 글꼴이름이 한글이거나 공백이 있을 때 => 따옴표
+    // 글꼴이름이 한글, 공백이 있을 때 => 따옴표
     font-family:"Noto Sans CJK KR", sans-serif;
 
-    @extend %clearFix;
+    @extend %clearfix;
 
     position:relative;
-    }
-
+  }
 
   &-inner{
     width:1080px;
@@ -32,13 +29,14 @@
     float:left;
     margin:21px 100px 0 0;
   }
+
   &-nav{
     float:left;
   }
 
   &-depth1{
 
-    @extend %clearFix;
+    @extend %clearfix;
 
     &-item{
       float:left;
@@ -52,43 +50,42 @@
       height:47px;
 
       &:hover{
-        color:coral;
+        color:#f27321;
       }
 
     }
 
-    &-border {
-      content: "";
-      display: block;
-      width: 0;
-      height: 4px;
-      background: deepskyblue;
-      margin: 10px auto 0;
+    &-border{
+      content:"";
+      display:block;
+      width:0;
+      height:4px;
+      background:deepskyblue;
+      margin:10px auto 0;
     }
 
   }
 
   &-depth2{
-
-    position: relative;
+    position:relative;
     left:50%;
     margin-left:-250px;
     padding:18px 0 20px 0;
 
-    @extend %clearFix;
+    @extend %clearfix;
 
     &-wrap{
       position:absolute;
       top:80px;
       left:0;
       width:100%;
+      background:#d0d0d0;
       height:0;
       overflow:hidden;
-      background:#d0d0d0;
     }
 
-    &-item {
-      float: left;
+    &-item{
+      float:left;
       margin-right:40px;
 
       &.vertical{
@@ -96,7 +93,7 @@
         padding-bottom:10px;
         margin-right:0;
 
-        @extend %clearFix;
+        @extend %clearfix;
 
         &:last-child{
           padding-bottom:0;
@@ -105,7 +102,6 @@
         >.menu-depth2-link{
           float:left;
         }
-
       }
     }
 
@@ -114,7 +110,7 @@
       width:100px;
 
       &:hover{
-        color:coral;
+        color:#f27321;
       }
     }
 
@@ -141,22 +137,177 @@
       color:#666;
       font-size:12px;
     }
-
-
-
   }
 
 }
-
 
 // visual style
 .visual{
   height:820px;
   background:url(../images/visual_img1.jpg) no-repeat center top;
-  font-family: 'Palanquin Dark', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size:80px;
   color:#fff;
   text-align:center;
   padding-top:200px;
+}
+
+// css 애니메이션
+.css-menu{
+
+  &-wrap{
+    /*
+      border-top:50px solid #333;
+      border-bottom:50px solid #bbb;
+    */
+    border:{
+      top:50px solid #333;
+      //bottom:50px solid #bbb;
+    }
+    // 글꼴이름이 한글, 공백이 있을 때 => 따옴표
+    font-family:"Noto Sans CJK KR", sans-serif;
+
+    @extend %clearfix;
+
+    position:relative;
+  }
+
+  &-inner{
+    width:1080px;
+    margin:0 auto;
+  }
+
+  &-logo{
+    float:left;
+    margin:21px 100px 0 0;
+  }
+
+  &-nav{
+    float:left;
+  }
+
+  &-depth1{
+
+    @extend %clearfix;
+
+    &-item{
+      float:left;
+    }
+
+    &-link{
+      display:block;
+      color:#666;
+      font-size:17px;
+      padding:33px 27px 0;
+      height:47px;
+
+      &:hover{
+        color:#f27321;
+
+        &:after{
+          width:64px;
+        }
+      }
+
+      &:after{
+        content:"";
+        display:block;
+        width:0;
+        height:4px;
+        background:deepskyblue;
+        margin:10px auto 0;
+        transition:width .3s ease-out;
+      }
+
+    }
+  }
+
+  &-depth2{
+    position:relative;
+    left:50%;
+    margin-left:-250px;
+    padding:18px 0 20px 0;
+
+    @extend %clearfix;
+
+    &-wrap{
+      position:absolute;
+      top:80px;
+      left:0;
+      width:100%;
+      background:#d0d0d0;
+      height:0;
+      overflow:hidden;
+      transition:all .3s ease-out;
+      opacity:0;
+
+      &.on{
+        z-index:10;
+        height:54px;
+        opacity:1;
+      }
+
+      &.high.on{
+        z-index:10;
+        height:80px;
+        opacity:1;
+      }
+
+    }
+
+    &-item{
+      float:left;
+      margin-right:40px;
+
+      &.vertical{
+        float:none;
+        padding-bottom:10px;
+        margin-right:0;
+
+        @extend %clearfix;
+
+        &:last-child{
+          padding-bottom:0;
+        }
+
+        >.css-menu-depth2-link{
+          float:left;
+        }
+      }
+    }
+
+    &-link{
+      color:#666;
+      width:100px;
+
+      &:hover{
+        color:#f27321;
+      }
+    }
+
+  }
+
+  &-depth3{
+    float:left;
+    position:relative;
+    padding-left:25px;
+    line-height:13px;
+
+    &:before{
+      content:"";
+      display:block;
+      width:1px;
+      height:15px;
+      background:#f27321;
+      position:absolute;
+      top:2px;
+      left:0;
+    }
+
+    &-link{
+      color:#666;
+      font-size:12px;
+    }
+  }
 
 }

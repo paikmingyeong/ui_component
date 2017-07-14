@@ -1,0 +1,63 @@
+/* 이미지 슬라이딩 */
+.rolling{
+  width:400px;
+  position:relative;
+  left:50%;
+  margin-left:-200px;
+}
+.view{
+  width:400px;
+  height:300px;
+  overflow:hidden;
+  position:relative;
+}
+.view-image{
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.arrow-wrap{
+  width:100%;
+  position:absolute;
+  top:50%;
+  margin-top:-15px;
+  left:0;
+}
+.arrow{
+  display:block;
+  width:31px;
+  height:47px;
+  border:0;
+  background:url(../images/arrow.png) no-repeat;
+  text-indent:-99999em;
+  cursor:pointer;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.arrow.right{
+  background-position:-31px 0;
+  left:auto;
+  right:0;
+}
+.control-wrap{
+  position:absolute;
+  left:50%;
+}
+.control-wrap:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.paging,
+.play-wrap{
+  float:left;
+  margin:0;
+  padding:0;
+}
+.paging-item{
+  float:left;
+  list-style-type:none;
+  margin-right:10px;
+}

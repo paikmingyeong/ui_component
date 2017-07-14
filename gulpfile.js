@@ -13,19 +13,6 @@ var concat = require('gulp-concat');
 
 // gulp.task( task이름, 함수.익명함수 );
 
-gulp.task('hello1', function () {
-  return console.log('HELLO WORLD1!');
-});
-
-gulp.task('hello2', function () {
-  return console.log('HELLO WORLD2!');
-});
-
-gulp.task('hello3', function () {
-  return console.log('HELLO WORLD3!');
-});
-
-
 // pipe 함수는 모듈의 기능을 실햏해주는 함수
 
 // 새로 고침
@@ -78,5 +65,21 @@ gulp.task('gnbmenu', function() {
       .pipe(gulp.dest('js/'));
 });
 
-gulp.task('jsconcat', ['tabmenu','gnbmenu']);
+gulp.task('timingfunction', function() {
+  return gulp.src('js_src/timing_function/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('timing_function.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('js/'));
+});
+
+gulp.task('imagesliding', function() {
+  return gulp.src('js_src/image_sliding/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('image_sliding.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('js/'));
+});
+
+gulp.task('jsconcat', ['tabmenu','gnbmenu', 'timingfunction', 'imagesliding']);
 gulp.task('default', ['livereload','include','sass','jsconcat', 'watch']);
